@@ -3,6 +3,7 @@ package io.github.cristian_eds.libraryapi.service;
 
 import io.github.cristian_eds.libraryapi.model.Autor;
 import io.github.cristian_eds.libraryapi.repository.AutorRepository;
+import io.github.cristian_eds.libraryapi.validator.AutorValidator;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,17 +14,21 @@ import java.util.UUID;
 public class AutorService {
 
     private final AutorRepository autorRepository;
+    private final AutorValidator autorValidator;
 
-    public AutorService(AutorRepository autorRepository) {
+    public AutorService(AutorRepository autorRepository, AutorValidator autorValidator) {
         this.autorRepository = autorRepository;
+        this.autorValidator = autorValidator;
     }
 
     public Autor salvar(Autor autor) {
+        autorValidator.validar(autor);
         return autorRepository.save(autor);
     }
 
     public void atualizar(Autor autor) {
         if(autor.getId() == null) throw new IllegalArgumentException("Para atualizar é necessário que o autor já esteja cadastrado.");
+        autorValidator.validar(autor);
         autorRepository.save(autor);
     }
 
