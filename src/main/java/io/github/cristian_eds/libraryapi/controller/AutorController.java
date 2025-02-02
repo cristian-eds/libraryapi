@@ -7,6 +7,8 @@ import io.github.cristian_eds.libraryapi.exceptions.OperacaoNaoPermitida;
 import io.github.cristian_eds.libraryapi.exceptions.RegistroDuplicadoException;
 import io.github.cristian_eds.libraryapi.model.Autor;
 import io.github.cristian_eds.libraryapi.service.AutorService;
+import jakarta.validation.Valid;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +21,13 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/autores")
-@RequiredArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PUBLIC)
 public class AutorController {
 
     private final AutorService autorService;
 
     @PostMapping
-    public ResponseEntity<Object> salvar(@RequestBody AutorDTO autor){
+    public ResponseEntity<Object> salvar(@RequestBody @Valid AutorDTO autor){
         try {
             Autor autorEntidade = autor.mapearParaAutor();
             Autor autorSalvo = autorService.salvar(autorEntidade);
