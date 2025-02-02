@@ -25,13 +25,13 @@ class LivroRepositoryTest {
     @Test
     void salvarTest() {
         Livro livro = new Livro();
-        livro.setGenero(GeneroLivro.MISTERIO);
-        livro.setIsbn("1312312");
-        livro.setPreco(BigDecimal.valueOf(20));
-        livro.setDataPublicacao(LocalDate.of(2020,9,10));
-        livro.setTitulo("A volta dos que nao foram");
+        livro.setGenero(GeneroLivro.FANTASIA);
+        livro.setIsbn("432432");
+        livro.setPreco(BigDecimal.valueOf(100));
+        livro.setDataPublicacao(LocalDate.of(2025,1,30));
+        livro.setTitulo("A viagem");
 
-        Autor autor = autorRepository.findById(UUID.fromString("5471b2b0-cc68-48fb-afea-ed9d571c134e")).orElse(null);
+        Autor autor = autorRepository.findById(UUID.fromString("a617541c-3b1f-4306-9ad2-fb5dd0c407fb")).orElse(null);
 
         livro.setAutor(autor);
 

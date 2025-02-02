@@ -35,7 +35,9 @@ public class Autor {
     @Column(nullable = false, length = 50)
     private String nacionalidade;
 
-    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "autor"
+            //,cascade = CascadeType.ALL
+    )
     private List<Livro> livros;
 
     @CreatedDate

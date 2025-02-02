@@ -1,8 +1,10 @@
 package io.github.cristian_eds.libraryapi.service;
 
 
+import io.github.cristian_eds.libraryapi.exceptions.OperacaoNaoPermitida;
 import io.github.cristian_eds.libraryapi.model.Autor;
 import io.github.cristian_eds.libraryapi.repository.AutorRepository;
+import io.github.cristian_eds.libraryapi.repository.LivroRepository;
 import io.github.cristian_eds.libraryapi.validator.AutorValidator;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,12 @@ public class AutorService {
 
     private final AutorRepository autorRepository;
     private final AutorValidator autorValidator;
+    private final LivroRepository livroRepository;
 
-    public AutorService(AutorRepository autorRepository, AutorValidator autorValidator) {
+    public AutorService(AutorRepository autorRepository, AutorValidator autorValidator, LivroRepository livroRepository) {
         this.autorRepository = autorRepository;
         this.autorValidator = autorValidator;
+        this.livroRepository = livroRepository;
     }
 
     public Autor salvar(Autor autor) {
@@ -37,6 +41,7 @@ public class AutorService {
     }
 
     public void deletar(UUID id) {
+        if(possuiLivro(id)) throw new OperacaoNaoPermitida("Autor possui livros cadastados vinculados!");
         autorRepository.deleteById(id);
     }
 
@@ -52,6 +57,11 @@ public class AutorService {
         }
 
         return autorRepository.findAll();
+    }
+
+    public boolean possuiLivro(UUID id) {
+        Autor autor = autorRepository.findById(id).get();
+        return livroRepository.existsByAutor(autor);
     }
 
 }
