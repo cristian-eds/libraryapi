@@ -23,7 +23,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/autores")
 @RequiredArgsConstructor(access = AccessLevel.PUBLIC)
-public class AutorController {
+public class AutorController implements GenericController{
 
     private final AutorService autorService;
     private final AutorMapper autorMapper;
@@ -32,12 +32,9 @@ public class AutorController {
     public ResponseEntity<Object> salvar(@RequestBody @Valid AutorDTO autorDTO){
         try {
             Autor autor = autorMapper.toEntity(autorDTO);
-            Autor autorSalvo = autorService.salvar(autor);
+            autorService.salvar(autor);
+            URI location = gerarHeaderLocation(autor.getId());
 
-            URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                    .path("/{id}")
-                    .buildAndExpand(autorSalvo.getId())
-                    .toUri();
             return ResponseEntity.created(location).build();
         } catch (RegistroDuplicadoException exception) {
             var erroDTO = ErroResposta.conflito(exception.getMessage());

@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.URI;
+
 @RestController
 @RequestMapping("livros")
 @RequiredArgsConstructor
-public class LivroController {
+public class LivroController implements GenericController{
 
     private final LivroService livroService;
     private final LivroMapper livroMapper;
@@ -27,8 +29,8 @@ public class LivroController {
         try {
             Livro livro = livroMapper.toEntity(livroDto);
             livroService.salvar(livro);
-
-            return ResponseEntity.ok(livro);
+            URI location = gerarHeaderLocation(livro.getId());
+            return ResponseEntity.created(location).build();
         } catch (RegistroDuplicadoException e) {
             var erroDto = ErroResposta.conflito(e.getMessage());
             return ResponseEntity.status(erroDto.status()).body(erroDto);
