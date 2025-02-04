@@ -60,4 +60,9 @@ public class LivroService {
         return livroRepository.findAll(specs);
 
     }
+
+    public void atualizar(Livro livro) {
+        if (livro.getId() == null) throw new IllegalArgumentException("Livro ainda não está salvo.");
+        livroRepository.save(livro);
+    }
 }
