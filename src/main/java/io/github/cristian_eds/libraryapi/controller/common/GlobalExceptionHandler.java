@@ -4,6 +4,7 @@ import io.github.cristian_eds.libraryapi.controller.dto.ErroCampo;
 import io.github.cristian_eds.libraryapi.controller.dto.ErroResposta;
 import io.github.cristian_eds.libraryapi.exceptions.OperacaoNaoPermitida;
 import io.github.cristian_eds.libraryapi.exceptions.RegistroDuplicadoException;
+import io.github.cristian_eds.libraryapi.exceptions.RegraDeNegocioException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -35,6 +36,14 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErroResposta handleOperacaoNaoPermitida(OperacaoNaoPermitida e){
         return ErroResposta.respostaPadrao(e.getMessage());
+    }
+
+    @ExceptionHandler(RegraDeNegocioException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    public ErroResposta handleRegraDeNegocioException(RegraDeNegocioException e){
+        return new ErroResposta(HttpStatus.UNPROCESSABLE_ENTITY.value(),
+                "Erro de validação.",
+                List.of(new ErroCampo(e.getCampo(),e.getMessage())));
     }
 
     @ExceptionHandler(RuntimeException.class)
