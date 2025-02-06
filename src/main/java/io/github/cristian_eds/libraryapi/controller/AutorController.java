@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -29,6 +30,7 @@ public class AutorController implements GenericController {
     private final AutorMapper autorMapper;
 
     @PostMapping
+    @PreAuthorize("hasRole('GERENTE')")
     public ResponseEntity<Object> salvar(@RequestBody @Valid AutorDTO autorDTO) {
         Autor autor = autorMapper.toEntity(autorDTO);
         autorService.salvar(autor);
@@ -39,6 +41,7 @@ public class AutorController implements GenericController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('OPERADOR','GERENTE')")
     public ResponseEntity<AutorResponseDTO> buscar(@PathVariable("id") String id) {
         UUID idAutor = UUID.fromString(id);
 
@@ -51,6 +54,7 @@ public class AutorController implements GenericController {
     }
 
     @DeleteMapping("{id}")
+    @PreAuthorize("hasRole('GERENTE')")
     public ResponseEntity<Object> deletar(@PathVariable String id) {
         UUID idAutor = UUID.fromString(id);
         Optional<Autor> autorOptional = autorService.buscar(idAutor);
@@ -65,6 +69,7 @@ public class AutorController implements GenericController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('OPERADOR','GERENTE')")
     public ResponseEntity<List<AutorResponseDTO>> pesquisar(
             @RequestParam(value = "nome", required = false) String nome,
             @RequestParam(value = "nacionalidade", required = false) String nacionalidade) {
@@ -77,6 +82,7 @@ public class AutorController implements GenericController {
     }
 
     @PutMapping("{id}")
+    @PreAuthorize("hasRole('GERENTE')")
     public ResponseEntity<Object> atualizar(@PathVariable String id, @RequestBody @Valid AutorDTO autorDto) {
         UUID idAutor = UUID.fromString(id);
         Optional<Autor> autorOptional = autorService.buscar(idAutor);
