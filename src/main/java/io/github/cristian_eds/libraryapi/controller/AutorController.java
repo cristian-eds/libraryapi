@@ -2,10 +2,7 @@ package io.github.cristian_eds.libraryapi.controller;
 
 import io.github.cristian_eds.libraryapi.controller.dto.AutorDTO;
 import io.github.cristian_eds.libraryapi.controller.dto.AutorResponseDTO;
-import io.github.cristian_eds.libraryapi.controller.dto.ErroResposta;
 import io.github.cristian_eds.libraryapi.controller.mappers.AutorMapper;
-import io.github.cristian_eds.libraryapi.exceptions.OperacaoNaoPermitida;
-import io.github.cristian_eds.libraryapi.exceptions.RegistroDuplicadoException;
 import io.github.cristian_eds.libraryapi.model.Autor;
 import io.github.cristian_eds.libraryapi.service.AutorService;
 import jakarta.validation.Valid;
@@ -14,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 import java.net.URI;
 import java.util.List;
@@ -32,6 +29,7 @@ public class AutorController implements GenericController {
     @PostMapping
     @PreAuthorize("hasRole('GERENTE')")
     public ResponseEntity<Object> salvar(@RequestBody @Valid AutorDTO autorDTO) {
+
         Autor autor = autorMapper.toEntity(autorDTO);
         autorService.salvar(autor);
 
