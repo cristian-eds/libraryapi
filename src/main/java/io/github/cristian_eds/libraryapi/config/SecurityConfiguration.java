@@ -1,6 +1,7 @@
 package io.github.cristian_eds.libraryapi.config;
 
 import io.github.cristian_eds.libraryapi.security.CustomUserDetailsService;
+import io.github.cristian_eds.libraryapi.security.LoginSocialSuccessHandler;
 import io.github.cristian_eds.libraryapi.service.UsuarioService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,14 +23,16 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfiguration {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, LoginSocialSuccessHandler loginSocialSuccessHandler) throws Exception{
         return http
                 .csrf(AbstractHttpConfigurer::disable)
         //        .formLogin(configurer ->
          //               configurer.loginPage("/login").permitAll())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
-                .oauth2Login(Customizer.withDefaults())
+                .oauth2Login(oauth2 -> {
+                    oauth2.successHandler(loginSocialSuccessHandler);
+                })
                 .authorizeHttpRequests(authorize -> {
                     authorize.requestMatchers("/login/**").permitAll();
                     authorize.requestMatchers(HttpMethod.POST,"/usuarios/**").permitAll();
