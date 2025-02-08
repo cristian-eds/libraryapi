@@ -26,12 +26,11 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http, LoginSocialSuccessHandler loginSocialSuccessHandler) throws Exception{
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-        //        .formLogin(configurer ->
-         //               configurer.loginPage("/login").permitAll())
-                .formLogin(Customizer.withDefaults())
+                .formLogin(configurer ->
+                        configurer.loginPage("/login").permitAll())
                 .httpBasic(Customizer.withDefaults())
                 .oauth2Login(oauth2 -> {
-                    oauth2.successHandler(loginSocialSuccessHandler);
+                    oauth2.successHandler(loginSocialSuccessHandler).loginPage("/login");
                 })
                 .authorizeHttpRequests(authorize -> {
                     authorize.requestMatchers("/login/**").permitAll();
