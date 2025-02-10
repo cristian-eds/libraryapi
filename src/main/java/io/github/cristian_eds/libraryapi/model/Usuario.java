@@ -16,7 +16,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true, length = 50)
     private String login;
 
     @Column(length = 300, nullable = false)
