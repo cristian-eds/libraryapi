@@ -40,6 +40,8 @@ public class AuthorizationServerConfiguration {
     @Order(1)
     public SecurityFilterChain authServerSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
+        OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(httpSecurity);
+
         httpSecurity.getConfigurer(OAuth2AuthorizationServerConfigurer.class)
                 .oidc(Customizer.withDefaults());
 
@@ -53,10 +55,7 @@ public class AuthorizationServerConfiguration {
         return httpSecurity.build();
     }
 
-    @Bean
-    public OAuth2AuthorizationServerConfigurer authorizationServerConfigurer() {
-        return new OAuth2AuthorizationServerConfigurer();
-    }
+
 
     @Bean
     public TokenSettings tokenSettings() {
