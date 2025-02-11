@@ -1,5 +1,10 @@
 package io.github.cristian_eds.libraryapi.config;
 
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
+import com.nimbusds.jose.jwk.source.JWKSource;
+import com.nimbusds.jose.proc.SecurityContext;
 import io.github.cristian_eds.libraryapi.security.CustomUserDetailsService;
 import io.github.cristian_eds.libraryapi.service.UsuarioService;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.server.authorization.OAuth2Authorization;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
@@ -19,7 +25,12 @@ import org.springframework.security.oauth2.server.authorization.settings.OAuth2T
 import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
 import org.springframework.security.web.SecurityFilterChain;
 
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
+import java.util.UUID;
 
 @Configuration
 @EnableWebSecurity
@@ -65,6 +76,35 @@ public class AuthorizationServerConfiguration {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(10);
+    }
+
+    //JWK JSON Web Key
+    @Bean
+    public JWKSource<SecurityContext> jwkSource() throws Exception {
+        RSAKey rsaKey = gerarChaveRSA();
+        JWKSet jwkSet = new JWKSet(rsaKey);
+        return new ImmutableJWKSet<>(jwkSet);
+    }
+
+    // PAR DE CHAVES RSA
+    private RSAKey gerarChaveRSA() throws Exception{
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        keyPairGenerator.initialize(2048);
+        KeyPair keyPair = keyPairGenerator.generateKeyPair();
+
+        RSAPublicKey chavePublica = (RSAPublicKey) keyPair.getPublic();
+        RSAPrivateKey chavePrivada = (RSAPrivateKey) keyPair.getPrivate();
+
+        return new RSAKey
+                .Builder(chavePublica)
+                .privateKey(chavePrivada)
+                .keyID(UUID.randomUUID().toString())
+                .build();
+    }
+
+    @Bean
+    public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
+        return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
     }
 }
 
