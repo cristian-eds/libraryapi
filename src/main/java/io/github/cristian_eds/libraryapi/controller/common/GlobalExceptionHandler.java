@@ -5,6 +5,7 @@ import io.github.cristian_eds.libraryapi.controller.dto.ErroResposta;
 import io.github.cristian_eds.libraryapi.exceptions.OperacaoNaoPermitida;
 import io.github.cristian_eds.libraryapi.exceptions.RegistroDuplicadoException;
 import io.github.cristian_eds.libraryapi.exceptions.RegraDeNegocioException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
@@ -17,11 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public ErroResposta handleMethodAgumentNotValidException(MethodArgumentNotValidException e) {
+        log.error("Erro de validação: {}", e.getMessage());
         List<FieldError> fieldErrors = e.getFieldErrors();
         List<ErroCampo> listaErros = fieldErrors.stream().map(campo -> new ErroCampo(campo.getField(), campo.getDefaultMessage())).toList();
         return new ErroResposta(HttpStatus.UNPROCESSABLE_ENTITY.value(), "Erro de validação",listaErros);
@@ -56,6 +59,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public  ErroResposta handleErrosNaoTratados(RuntimeException e) {
+        log.error("Erro inesperado ", e);
         return new ErroResposta(HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 "Erro interno, por favor aguarde e tente novamente mais tarde",
                 List.of());
