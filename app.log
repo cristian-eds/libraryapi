@@ -148,3 +148,133 @@ java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to 
 2025-02-14T09:29:20.811-03:00  INFO 99068 --- [libraryapi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-02-14T09:29:20.911-03:00  INFO 99068 --- [libraryapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-02-14T09:29:20.953-03:00  INFO 99068 --- [libraryapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-14T09:29:29.375-03:00  INFO 91820 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Starting LibraryapiApplication using Java 21 with PID 91820 (C:\Projeto\libraryapi\target\classes started by crist in C:\Projeto\libraryapi)
+2025-02-14T09:29:29.378-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-02-14T09:29:29.379-03:00  INFO 91820 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-14T09:29:40.306-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2025-02-14T09:29:40.310-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] i.g.c.l.s.JwtCustomAuthenticationFilter  : Filter 'jwtCustomAuthenticationFilter' configured for use
+2025-02-14T09:29:43.253-03:00  WARN 91820 --- [libraryapi] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-14T09:29:43.780-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 21 mappings in 'requestMappingHandlerMapping'
+2025-02-14T09:29:43.836-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/login] in 'viewControllerHandlerMapping'
+2025-02-14T09:29:44.034-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-02-14T09:29:46.909-03:00  WARN 91820 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs/**'], Ant [pattern='/v2/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:29:46.911-03:00  WARN 91820 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:29:46.911-03:00  WARN 91820 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:29:46.912-03:00  WARN 91820 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:29:46.912-03:00  WARN 91820 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:29:46.913-03:00  WARN 91820 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:29:47.231-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-02-14T09:29:47.550-03:00 DEBUG 91820 --- [libraryapi] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-02-14T09:29:48.762-03:00  INFO 91820 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Started LibraryapiApplication in 20.431 seconds (process running for 21.355)
+2025-02-14T09:30:07.380-03:00  INFO 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-14T09:30:07.381-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-02-14T09:30:07.381-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-02-14T09:30:07.381-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-02-14T09:30:07.384-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6fbdb4d0
+2025-02-14T09:30:07.386-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@467c7baa
+2025-02-14T09:30:07.387-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-02-14T09:30:07.388-03:00  INFO 91820 --- [libraryapi] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-02-14T09:30:07.710-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2025-02-14T09:30:07.713-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ParameterizableViewController [view="login"]
+2025-02-14T09:30:08.013-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-02-14T09:30:58.669-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/clients", parameters={}
+2025-02-14T09:30:58.671-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to io.github.cristian_eds.libraryapi.controller.ClientController#salvar(ClientDTO)
+2025-02-14T09:30:58.766-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ClientDTO[clientId=meu-client-2, clientSecret=client-secret-2, redirectURI=http://localhost:8080/aut (truncated)...]
+2025-02-14T09:30:58.785-03:00  INFO 91820 --- [libraryapi] [http-nio-8080-exec-8] i.g.c.l.controller.ClientController      : Registrando novo Client: meu-client-2 com scope GERENTE
+2025-02-14T09:30:58.999-03:00 DEBUG 91820 --- [libraryapi] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-02-14T09:36:44.254-03:00  INFO 61956 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Starting LibraryapiApplication using Java 21 with PID 61956 (C:\Projeto\libraryapi\target\classes started by crist in C:\Projeto\libraryapi)
+2025-02-14T09:36:44.256-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-02-14T09:36:44.257-03:00  INFO 61956 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-14T09:36:51.857-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [EC3A2E57DD4D1086E0F5FB650A7F902F]
+2025-02-14T09:36:51.858-03:00 ERROR 61956 --- [libraryapi] [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass cannot be cast to class java.lang.String (java.io.ObjectStreamClass and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1839) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:709) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:1014) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2050) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1927) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2252) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1762) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1198) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:831) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:210) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:156) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:345) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4453) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.2.jar:3.4.2]
+	at io.github.cristian_eds.libraryapi.LibraryapiApplication.main(LibraryapiApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.2.jar:3.4.2]
+
+2025-02-14T09:36:51.873-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2025-02-14T09:36:51.878-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] i.g.c.l.s.JwtCustomAuthenticationFilter  : Filter 'jwtCustomAuthenticationFilter' configured for use
+2025-02-14T09:36:53.360-03:00  WARN 61956 --- [libraryapi] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-14T09:36:53.691-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 21 mappings in 'requestMappingHandlerMapping'
+2025-02-14T09:36:53.729-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/login] in 'viewControllerHandlerMapping'
+2025-02-14T09:36:53.790-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-02-14T09:36:54.641-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs/**'], Ant [pattern='/v2/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:36:54.642-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:36:54.642-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:36:54.642-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:36:54.642-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:36:54.642-03:00  WARN 61956 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:36:54.726-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-02-14T09:36:54.836-03:00 DEBUG 61956 --- [libraryapi] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-02-14T09:36:55.323-03:00  INFO 61956 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Started LibraryapiApplication in 11.936 seconds (process running for 12.791)
+2025-02-14T09:37:40.262-03:00  INFO 95156 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Starting LibraryapiApplication using Java 21 with PID 95156 (C:\Projeto\libraryapi\target\classes started by crist in C:\Projeto\libraryapi)
+2025-02-14T09:37:40.266-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-02-14T09:37:40.267-03:00  INFO 95156 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-14T09:37:48.597-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2025-02-14T09:37:48.603-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] i.g.c.l.s.JwtCustomAuthenticationFilter  : Filter 'jwtCustomAuthenticationFilter' configured for use
+2025-02-14T09:37:54.852-03:00  WARN 95156 --- [libraryapi] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-14T09:37:55.552-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 21 mappings in 'requestMappingHandlerMapping'
+2025-02-14T09:37:55.628-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/login] in 'viewControllerHandlerMapping'
+2025-02-14T09:37:55.861-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-02-14T09:37:57.869-03:00  WARN 95156 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs/**'], Ant [pattern='/v2/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:37:57.871-03:00  WARN 95156 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:37:57.871-03:00  WARN 95156 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:37:57.872-03:00  WARN 95156 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:37:57.872-03:00  WARN 95156 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:37:57.872-03:00  WARN 95156 --- [libraryapi] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-02-14T09:37:58.075-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-02-14T09:37:58.328-03:00 DEBUG 95156 --- [libraryapi] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-02-14T09:37:59.307-03:00  INFO 95156 --- [libraryapi] [restartedMain] i.g.c.libraryapi.LibraryapiApplication   : Started LibraryapiApplication in 19.859 seconds (process running for 20.699)
