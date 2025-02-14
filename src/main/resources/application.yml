@@ -39,3 +39,11 @@ logging:
 
 springdoc:
   override-with-generic-response: false
+
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: "*"
