@@ -20,5 +20,17 @@ spring:
               client-id: ${CLIENT_ID}
               client-secret: ${CLIENT_SECRET}
 
+logging:
+  file:
+    name: app.log
+  level:
+    root: warn
+    io:
+      github:
+        cristian_eds: trace
+    org:
+      springframework:
+        web: debug
+
 springdoc:
   override-with-generic-response: false
